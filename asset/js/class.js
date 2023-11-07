@@ -14,7 +14,7 @@ class Agent {
   constructor(x, y) {
     this.pos = new Vector(x, y);
     this.vel = new Vector(getRandomInteger(-1, 1), getRandomInteger(-1, 1));
-    this.radius = 50;
+    this.radius = 5;
   }
 
   bounce(width, height) {
@@ -24,19 +24,17 @@ class Agent {
 
   update() {
     this.pos.x += this.vel.x;
-    this.pos.x += this.vel.x;
+    this.pos.y += this.vel.y;
   }
 
   draw(context) {
-    context.save();
     context.beginPath();
 
     context.lineWith = 4;
-    context.lineStyle = "white";
+    context.strokeStyle = "white";
 
     context.arc(this.pos.x, this.pos.y, this.radius, 0, Math.PI * 2);
 
     context.stroke();
-    context.restore();
   }
 }
