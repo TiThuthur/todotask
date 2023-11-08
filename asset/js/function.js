@@ -7,21 +7,17 @@ const getRandomInteger = (min, max) => {
 };
 
 /**
- *  try to find the linearization of the value
  *
- * exemple : pour 200 on a 12
- * pour 100 on a 8.33 (calcul faux mais s'appuyer sur l'exemple)
+ * @param dist input distance (variable)
+ * @param distanceMax maximal distance (fixed)
+ * @param outputMax output max of the function (fixed)
+ * @example
+ *  try to find the linearization of the value
+ * for dist = 100, distanceMax = 200 and outputMax =12
+ * @returns 8.33
+ *
  *
  */
-// const distanceMap= (dist,max,outputMin,outputMax)=>{
-//   let output
-//   outputMax=12
-//   outputMin=1
-//   dist=100
-//   max=200
-
-//   if (dist > max) return 0
-
-//   output= dist/outputMax *outputMin
-
-// }
+const distanceMap = (dist, distanceMax, outputMax) => {
+  return (distanceMax - dist) / outputMax;
+};

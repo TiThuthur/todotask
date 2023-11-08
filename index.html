@@ -17,13 +17,29 @@
   <body>
     <div class="card glass">
       <div class="card-header">
-        <p class="title is-1">TodoTask</p>
-        <p class="subtitle is-3">L'application pour savoir quoi faire</p>
+        <h1 class="card-header-title title is-1">TodoTask</h1>
+        <h2 class="card-header-subtitle subtitle is-3 is-spaced">
+          L'application pour savoir quoi faire
+        </h2>
       </div>
       <div class="card-content">
-        <ul></ul>
-        <input type="text" class="block" />
-        <button type="button" class="button is-primary block">Ajouter</button>
+        <div class="content">
+          <ul></ul>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="input-field block">
+          <div class="field is-grouped">
+            <div class="control is-expanded">
+              <input type="text" class="input" />
+            </div>
+            <div class="control">
+              <button type="button" class="button is-primary block">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <canvas width="1920" height="1080"></canvas>

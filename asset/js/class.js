@@ -31,10 +31,12 @@ class Agent {
     context.beginPath();
 
     context.lineWith = 4;
-    context.strokeStyle = "white";
+    context.strokeStyle = "#44a08d";
+    context.fillStyle = "black";
 
     context.arc(this.pos.x, this.pos.y, this.radius, 0, Math.PI * 2);
 
+    context.fill();
     context.stroke();
   }
 }

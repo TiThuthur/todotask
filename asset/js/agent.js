@@ -19,15 +19,22 @@ const animate = () => {
 
       const dist = agent.pos.distance(other.pos);
 
-      console.log(Math.map(0, 200, 12, 1));
-      // context.lineWidth =
+      if (dist > 200) continue;
+
+      context.save();
+      context.lineWidth = distanceMap(dist, 200, 12);
+      context.beginPath();
+      context.moveTo(agent.pos.x, agent.pos.y);
+      context.lineTo(other.pos.x, other.pos.y);
+      context.stroke();
+      context.restore();
     }
-    agents.forEach((agent) => {
-      agent.update();
-      agent.draw(context);
-      agent.bounce(width, height);
-    });
   }
+  agents.forEach((agent) => {
+    agent.update();
+    agent.draw(context);
+    agent.bounce(width, height);
+  });
   window.requestAnimationFrame(animate);
 };
 animate();

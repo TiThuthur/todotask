@@ -21,11 +21,12 @@ canvas {
   z-index: -1;
 }
 
+
 .card.glass {
   margin: 25vh 15vw;
   border: #f1f1f1 1px solid;
   background-color: rgb(242, 242, 242, 0.3);
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(10px);
 }
 
 .card-header {
@@ -39,7 +40,7 @@ canvas {
     align-items: center;
 }
 
-.card input {
-    
-  width: 80%;
+
+.card .input-field{
+  width: 70%;
 }
