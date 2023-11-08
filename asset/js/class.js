@@ -13,7 +13,7 @@ class Vector {
 class Agent {
   constructor(x, y) {
     this.pos = new Vector(x, y);
-    this.vel = new Vector(getRandomInteger(-1, 1), getRandomInteger(-1, 1));
+    this.vel = new Vector(getRandomInteger(-2, 2), getRandomInteger(-2, 2));
     this.radius = 5;
   }
 
