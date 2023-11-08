@@ -1,3 +1,5 @@
+$title-color: $turquoise;
+
 html {
   height: 100%;
   background: #44a08d; /* fallback for old browsers */
@@ -21,7 +23,6 @@ canvas {
   z-index: -1;
 }
 
-
 .card.glass {
   margin: 25vh 15vw;
   border: #f1f1f1 1px solid;
@@ -34,13 +35,12 @@ canvas {
   flex-direction: column;
 }
 
-.card-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.card .input-field{
+.card .input-field {
   width: 70%;
 }
