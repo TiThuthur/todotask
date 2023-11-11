@@ -21,18 +21,27 @@ canvas {
   background-color: rgba(242, 242, 242, 0.3);
   backdrop-filter: blur(10px);
 }
-
 .card-header {
   text-align: center;
   flex-direction: column;
 }
-
 .card-content {
+  padding: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.card-content ul li {
+  font-size: 1.1em;
+  color: white;
+  width: 50vw;
+  height: 0.2em;
+}
+.card-content ul li .checkbox {
+  margin: 1em;
+  width: 1em;
+  height: 1em;
+}
 .card .input-field {
   width: 70%;
 }
