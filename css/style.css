@@ -32,15 +32,75 @@ canvas {
   align-items: center;
 }
 .card-content ul li {
-  font-size: 1.1em;
+  display: flex;
+  justify-content: space-between;
+  padding: 1vw 7vw;
+  font-size: 1.5em;
   color: white;
-  width: 50vw;
-  height: 0.2em;
+  height: 10vh;
+  width: 100%;
+  /* checkbox custom*/
 }
-.card-content ul li .checkbox {
-  margin: 1em;
-  width: 1em;
+.card-content ul li .checkbox-custom {
+  margin: 0.5em;
+}
+.card-content ul li .checkbox-custom .tgl {
+  display: none;
+}
+.card-content ul li .checkbox-custom .tgl::after, .card-content ul li .checkbox-custom .tgl::before, .card-content ul li .checkbox-custom .tgl *, .card-content ul li .checkbox-custom .tgl *::after,
+.card-content ul li .checkbox-custom .tgl *::before, .card-content ul li .checkbox-custom .tgl + .tgl-btn {
+  box-sizing: border-box;
+}
+.card-content ul li .checkbox-custom .tgl::-moz-selection, .card-content ul li .checkbox-custom .tgl::after::-moz-selection, .card-content ul li .checkbox-custom .tgl::before::-moz-selection, .card-content ul li .checkbox-custom .tgl *::-moz-selection, .card-content ul li .checkbox-custom .tgl *::after::-moz-selection, .card-content ul li .checkbox-custom .tgl *::before::-moz-selection, .card-content ul li .checkbox-custom .tgl + .tgl-btn::-moz-selection, .card-content ul li .checkbox-custom .tgl::selection, .card-content ul li .checkbox-custom .tgl::after::selection, .card-content ul li .checkbox-custom .tgl::before::selection, .card-content ul li .checkbox-custom .tgl *::selection, .card-content ul li .checkbox-custom .tgl *::after::selection, .card-content ul li .checkbox-custom .tgl *::before::selection, .card-content ul li .checkbox-custom .tgl + .tgl-btn::selection {
+  background: none;
+}
+.card-content ul li .checkbox-custom .tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 2em;
   height: 1em;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.card-content ul li .checkbox-custom .tgl + .tgl-btn::after, .card-content ul li .checkbox-custom .tgl + .tgl-btn::before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+.card-content ul li .checkbox-custom .tgl + .tgl-btn::after {
+  left: 0;
+}
+.card-content ul li .checkbox-custom .tgl + .tgl-btn::before {
+  display: none;
+}
+.card-content ul li .checkbox-custom .tgl:checked + .tgl-btn::after {
+  left: 50%;
+}
+.card-content ul li .checkbox-custom .tgl-light + .tgl-btn {
+  border: #f1f1f1 2px solid;
+  background: rgba(240, 240, 240, 0);
+  border-radius: 2em;
+  padding: 2px;
+  transition: all 0.4s ease;
+}
+.card-content ul li .checkbox-custom .tgl-light + .tgl-btn:after {
+  border-radius: 50%;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+.card-content ul li .checkbox-custom .tgl-light:checked + .tgl-btn {
+  background: #44a08d;
+}
+.card-content ul li p {
+  color: black;
+  width: 100%;
+  padding: 0 1em;
 }
 .card .input-field {
   width: 70%;

@@ -44,14 +44,93 @@ canvas {
     align-items: center;
     & ul {
       & li {
-        font-size: 1.1em;
+        display: flex;
+        justify-content: space-between;
+        padding: 1vw 7vw;
+        font-size: 1.5em;
         color: white;
-        width: 50vw;
-        height: 0.2em;
-        & .checkbox {
-          margin: 1em;
-          width: 1em;
-          height: 1em;
+        height: 10vh;
+        width: 100%;
+        /* checkbox custom*/
+        .checkbox-custom {
+          margin: 0.5em;
+          & .tgl {
+            display: none;
+            &::after,
+            &::before,
+            & *,
+            & *::after,
+            *::before,
+            & + .tgl-btn {
+              box-sizing: border-box;
+            }
+            &::-moz-selection,
+            &::after::-moz-selection,
+            &::before::-moz-selection,
+            & *::-moz-selection,
+            & *::after::-moz-selection,
+            & *::before::-moz-selection,
+            & + .tgl-btn::-moz-selection,
+            &::selection,
+            &::after::selection,
+            &::before::selection,
+            & *::selection,
+            & *::after::selection,
+            & *::before::selection,
+            & + .tgl-btn::selection {
+              background: none;
+            }
+            & + .tgl-btn {
+              outline: 0;
+              display: block;
+              width: 2em;
+              height: 1em;
+              position: relative;
+              cursor: pointer;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              &::after,
+              &::before {
+                position: relative;
+                display: block;
+                content: "";
+                width: 50%;
+                height: 100%;
+              }
+              &::after {
+                left: 0;
+              }
+              &::before {
+                display: none;
+              }
+            }
+            &:checked + .tgl-btn::after {
+              left: 50%;
+            }
+          }
+          & .tgl-light + .tgl-btn {
+            border: #f1f1f1 2px solid;
+            background: #f0f0f000;
+            border-radius: 2em;
+            padding: 2px;
+            transition: all 0.4s ease;
+            &:after {
+              border-radius: 50%;
+              background: #fff;
+              transition: all 0.2s ease;
+            }
+          }
+          & .tgl-light:checked + .tgl-btn {
+            background: #44a08d;
+          }
+        }
+        //end  of checkbox custom
+        p {
+          color: black;
+          width: 100%;
+          padding: 0 1em;
         }
       }
     }
@@ -61,77 +140,3 @@ canvas {
     width: 70%;
   }
 }
-
-// <div class="checkbox-wrapper-3">
-// <input type="checkbox" id="cbx-3" />
-// <label for="cbx-3" class="toggle"><span></span></label>
-// </div>
-
-// <style>
-// .checkbox-wrapper-3 input[type="checkbox"] {
-//   visibility: hidden;
-//   display: none;
-// }
-
-// .checkbox-wrapper-3 .toggle {
-//   position: relative;
-//   display: block;
-//   width: 40px;
-//   height: 20px;
-//   cursor: pointer;
-//   -webkit-tap-highlight-color: transparent;
-//   transform: translate3d(0, 0, 0);
-// }
-// .checkbox-wrapper-3 .toggle:before {
-//   content: "";
-//   position: relative;
-//   top: 3px;
-//   left: 3px;
-//   width: 34px;
-//   height: 14px;
-//   display: block;
-//   background: #9A9999;
-//   border-radius: 8px;
-//   transition: background 0.2s ease;
-// }
-// .checkbox-wrapper-3 .toggle span {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 20px;
-//   height: 20px;
-//   display: block;
-//   background: white;
-//   border-radius: 10px;
-//   box-shadow: 0 3px 8px rgba(154, 153, 153, 0.5);
-//   transition: all 0.2s ease;
-// }
-// .checkbox-wrapper-3 .toggle span:before {
-//   content: "";
-//   position: absolute;
-//   display: block;
-//   margin: -18px;
-//   width: 56px;
-//   height: 56px;
-//   background: rgba(79, 46, 220, 0.5);
-//   border-radius: 50%;
-//   transform: scale(0);
-//   opacity: 1;
-//   pointer-events: none;
-// }
-
-// .checkbox-wrapper-3 #cbx-3:checked + .toggle:before {
-//   background: #947ADA;
-// }
-// .checkbox-wrapper-3 #cbx-3:checked + .toggle span {
-//   background: #4F2EDC;
-//   transform: translateX(20px);
-//   transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
-//   box-shadow: 0 3px 8px rgba(79, 46, 220, 0.2);
-// }
-// .checkbox-wrapper-3 #cbx-3:checked + .toggle span:before {
-//   transform: scale(1);
-//   opacity: 0;
-//   transition: all 0.4s ease;
-// }
-// </style>
